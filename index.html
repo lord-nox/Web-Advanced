@@ -8,17 +8,18 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Home</div>
+        <div class="logo"><img src="logo.png" alt="Logo"></div>
         <ul class="nav-links">
-            <li><a href="#">Catalogus</a></li>
-            <li><a href="#">page2</a></li>
-            <li><a href="#">page3</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Favorites</a></li>
+            <li><a href="#">Page 3</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <div class="image-left">
-            <img src="pictures/logo's.jpg.jpg">
+            <img src="pictures/logo's.jpg.jpg" alt="Left Image">
         </div>
         <div class="form-container">
             <h1>Car Parameters</h1>
@@ -32,20 +33,22 @@
                     <input type="text" id="model" name="model">
                 </div>
                 <div>
-                    <label for="year">Year:</label> <!-- Changed label for the "year" field -->
-                    <input type="text" id="year" name="year"> <!-- Added text field for the "year" field -->
+                    <label for="year">Year:</label>
+                    <input type="text" id="year" name="year">
                 </div>
-                <!-- Add other input fields for the remaining parameters here -->
                 <button type="submit" id="submitButton" disabled>Submit</button>
             </form>
         </div>
         <div class="image-right">
-            <img src="pictures/logo's.jpg.jpg" alt="Right Image">
+            <img src="/pictures/logo's.jpg.jpg" alt="Right Image">
         </div>
     </div>
 
-    <!-- Output div for displaying the received car data -->
     <div id="output"></div>
+
+    <footer>
+        <p>&copy; 2024 YourCompany. All rights reserved.</p>
+    </footer>
 
     <script src="script.js" defer></script>
 </body>

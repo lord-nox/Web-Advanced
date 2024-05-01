@@ -1,6 +1,10 @@
 /* CSS voor de navigatiebalk */
-
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #222;
     color: #fff;
     padding: 20px;
@@ -9,8 +13,10 @@ nav {
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5em;
+.logo img {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
 }
 
 .nav-links {
@@ -27,11 +33,10 @@ nav {
 .nav-links li a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease; /* Animatie bij hover */
 }
 
 .nav-links li a:hover {
-    color: #007bff; /* Verander de kleur bij hover */
+    color: #007bff;
 }
 
 /* Algemene stijlen */
@@ -41,46 +46,59 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px;
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
     max-width: 1000px;
-    margin: 20px auto;
-    background-color: #222; /* Dark background color for container */
+    margin: 100px auto 20px;
     padding: 20px;
+    background-color: #222;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    align-items: center;
 }
 
 .image-left img,
 .image-right img {
-    width: 100%; /* Adjust the width of the images to fill the container */
+    width: 100%;
     height: auto;
-    border-radius: 10px; /* Rounded corners for images */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow effect for images */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.image-left {
+    grid-column: 1 / 2;
+}
+
+.image-right {
+    grid-column: 3 / 4;
 }
 
 .form-container {
-    flex-grow: 1;
-    margin: 0 20px; /* Adjust the margin as needed */
+    grid-column: 2 / 3;
+}
+
+.form-container {
+    margin: 0 20px;
 }
 
 h1 {
     text-align: center;
-    color: #fff; /* White text color */
+    color: #fff;
 }
 
-/* Styles for the form */
 form {
     max-width: 400px;
     margin: 0 auto;
-    background-color: #fff; /* White background color for form */
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"] {
@@ -107,7 +125,6 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* Styles for displaying the received car data */
 #output {
     margin-top: 20px;
 }
@@ -133,15 +150,29 @@ button:disabled {
 /* Mediaquery voor responsiveness */
 @media screen and (max-width: 768px) {
     .container {
-        flex-direction: column; /* Change to a vertical layout on smaller screens */
+        flex-direction: column;
         align-items: stretch;
+        grid-template-columns: 1fr;
     }
     .image-left img,
     .image-right img {
-        border-radius: 0; /* Remove border radius on smaller screens */
-        box-shadow: none; /* Remove shadow on smaller screens */
+        border-radius: 0;
+        box-shadow: none;
     }
     .form-container {
-        margin: 20px 0; /* Add margin to form container on smaller screens */
+        margin: 20px 0;
     }
+}
+
+/* CSS voor de footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
 }
