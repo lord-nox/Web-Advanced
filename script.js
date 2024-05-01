@@ -34,3 +34,18 @@ function toonAutoTabel(autoData) {
     // Voeg de tabel toe aan de #auto-tabel div
     $('#auto-tabel').html(autoTabelHTML);
 }
+
+// Selecteer elementen
+const hoofdtitel = document.getElementById('hoofdtitel');
+const paragrafen = document.getElementsByClassName('paragraaf');
+const knop = document.querySelector('#knop');
+
+// Manipuleer de geselecteerde elementen
+hoofdtitel.innerText = 'Nieuwe titel';
+for (let i = 0; i < paragrafen.length; i++) {
+    paragrafen[i].style.color = 'blue';
+}
+knop.addEventListener('click', function() {
+    alert('Knop is geklikt');
+});
+
