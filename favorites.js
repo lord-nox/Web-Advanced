@@ -1,46 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('carForm');
-    const submitButton = document.getElementById('submitButton');
-    const outputDiv = document.getElementById('output');
-    const defaultLimit = 50;
+    const favoritesOutput = document.getElementById('favoritesOutput');
 
-    form.addEventListener('input', function() {
-        const inputs = form.querySelectorAll('input[type="text"]');
-        let isAnyFieldFilled = false;
-        inputs.forEach(function(input) {
-            if (input.value.trim() !== '') {
-                isAnyFieldFilled = true;
-            }
-        });
-        submitButton.disabled = !isAnyFieldFilled;
-    });
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (validateForm()) {
-            sendDataToAPI();
-            outputDiv.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            outputDiv.innerHTML = 'Please fill in at least one field.';
+    function fetchFavoriteCars() {
+        const likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
+        if (likedCars.length === 0) {
+            favoritesOutput.innerHTML = '<p>No favorite cars added yet.</p>';
+            return;
         }
-    });
 
-    function validateForm() {
-        const inputs = form.querySelectorAll('input[type="text"]');
-        let isAnyFieldFilled = false;
-        inputs.forEach(function(input) {
-            if (input.value.trim() !== '') {
-                isAnyFieldFilled = true;
-            }
-        });
-        return isAnyFieldFilled;
-    }
+        const apiUrl = 'https://api.api-ninjas.com/v1/cars?id=' + likedCars.join(',');
 
-    function sendDataToAPI() {
-        const formData = new FormData(form);
-        const searchParams = new URLSearchParams(formData);
-        searchParams.set('limit', defaultLimit);
-        const apiUrl = 'https://api.api-ninjas.com/v1/cars?' + searchParams;
         fetch(apiUrl, {
             method: 'GET',
             headers: {
@@ -54,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            displayCarData(data);
+            displayFavoriteCars(data);
         })
         .catch(error => {
-            outputDiv.innerHTML = 'An error occurred: ' + error.message;
+            favoritesOutput.innerHTML = 'An error occurred: ' + error.message;
         });
     }
 
-    function displayCarData(cars) {
+    function displayFavoriteCars(cars) {
         let carHtml = '';
         cars.forEach(car => {
             const cityMpg = car.city_mpg;
@@ -84,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="like-button">&#9825;</button>
             </div>`;
         });
-        outputDiv.innerHTML = carHtml;
+        favoritesOutput.innerHTML = carHtml;
         updateLikedCars();
         addLikeButtonListeners();
     }
@@ -106,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             likedCars.push(carId);
         }
         localStorage.setItem('likedCars', JSON.stringify(likedCars));
-        updateLikedCars();
+        fetchFavoriteCars();
     }
 
     function updateLikedCars() {
@@ -123,4 +92,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    fetchFavoriteCars();
+});
+fetch(apiUrl, {
+    method: 'GET',
+    headers: {
+        'X-Api-Key': 'Qg+zs2Q/O1tfiWZv3hNeTw==0Q5YlQKMJDWrTjlb'
+    }
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('An error occurred while fetching data from the API: ' + response.statusText);
+    }
+    return response.json();
+})
+.then(data => {
+    displayFavoriteCars(data);
+})
+.catch(error => {
+    favoritesOutput.innerHTML = 'An error occurred: ' + error.message;
 });
