@@ -11,7 +11,7 @@ Endtask
     </ul>
     <h2 id="installatie">Installatie</h2>
     <p>Clone de repository naar je lokale machine:</p>
-    <pre><code>git clone https://github.com/jouw-gebruikersnaam/auto-zoekmachine.git</code></pre>
+    <pre><code>git clone https://github.com/lord-nox/Web-Advanced.git</code></pre>
     <p>Navigeer naar de gekloonde map:</p>
     <pre><code>cd auto-zoekmachine</code></pre>
     <p>Open het index.html-bestand in je favoriete webbrowser.</p>
