@@ -5,23 +5,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const defaultLimit = 50;
 
     form.addEventListener('input', function() {
-        const inputs = form.querySelectorAll('input[type="text"]');
-        let isAnyFieldFilled = false;
-        inputs.forEach(function(input) {
-            if (input.value.trim() !== '') {
-                isAnyFieldFilled = true;
+        const inputs = form.querySelectorAll('input[type="text"]'); // Get all text input fields in the form
+        let isAnyFieldFilled = false; // Initialize a variable to check if any field is filled
+    
+        inputs.forEach(function(input) { // Iterate over each text input field
+            if (input.value.trim() !== '') { // Check if the field is not empty or just whitespace
+                isAnyFieldFilled = true; // If a field is filled, set the variable to true
             }
         });
-        submitButton.disabled = !isAnyFieldFilled;
+    
+        submitButton.disabled = !isAnyFieldFilled; // Enable the submit button if any field is filled
     });
-
+ 
     form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (validateForm()) {
-            sendDataToAPI();
-            outputDiv.scrollIntoView({ behavior: 'smooth' });
+        event.preventDefault(); // Prevent the default form submission behavior
+    
+        if (validateForm()) { // Check if the form is valid
+            sendDataToAPI(); // Send the form data to the API if valid
+            outputDiv.scrollIntoView({ behavior: 'smooth' }); // Scroll the output div into view smoothly
         } else {
-            outputDiv.innerHTML = 'Please fill in at least one field.';
+            outputDiv.innerHTML = 'Please fill in at least one field.'; // Display an error message if the form is not valid
         }
     });
 
@@ -88,17 +91,19 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLikedCars();
         addLikeButtonListeners();
     }
+    
 
-    function addLikeButtonListeners() {
+    // Adding async listener to the like button
+    async function addLikeButtonListeners() {
         document.querySelectorAll('.like-button').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', async function() {
                 const carId = this.parentElement.getAttribute('data-id');
-                toggleFavorite(carId);
+                await toggleFavorite(carId); // Ensure it awaits the async operation
             });
         });
     }
 
-    function toggleFavorite(carId) {
+    async function toggleFavorite(carId) {
         let likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
         if (likedCars.includes(carId)) {
             likedCars = likedCars.filter(id => id !== carId);
@@ -123,4 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    // Initial call to set up listeners
+    addLikeButtonListeners();
 });

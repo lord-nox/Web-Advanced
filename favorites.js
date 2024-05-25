@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const favoritesOutput = document.getElementById('favoritesOutput');
+    let likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
 
     function fetchFavoriteCars() {
-        const likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
+        likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
         if (likedCars.length === 0) {
             favoritesOutput.innerHTML = '<p>No favorite cars added yet.</p>';
             return;
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function toggleFavorite(carId) {
-        let likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
+        likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
         if (likedCars.includes(carId)) {
             likedCars = likedCars.filter(id => id !== carId);
         } else {
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateLikedCars() {
-        const likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
+        likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
         document.querySelectorAll('.car').forEach(carDiv => {
             const carId = carDiv.getAttribute('data-id');
             const likeButton = carDiv.querySelector('.like-button');
@@ -95,21 +96,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fetchFavoriteCars();
 });
-fetch(apiUrl, {
-    method: 'GET',
-    headers: {
-        'X-Api-Key': 'Qg+zs2Q/O1tfiWZv3hNeTw==0Q5YlQKMJDWrTjlb'
-    }
-})
-.then(response => {
-    if (!response.ok) {
-        throw new Error('An error occurred while fetching data from the API: ' + response.statusText);
-    }
-    return response.json();
-})
-.then(data => {
-    displayFavoriteCars(data);
-})
-.catch(error => {
-    favoritesOutput.innerHTML = 'An error occurred: ' + error.message;
-});
+
+export { fetchFavoriteCars };
