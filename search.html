@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favorites</title>
+    <title>Search</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
-        <div class="logo"><img src="/pictures/logo's.jpg.jpg" alt="Logo"></div>
+        <div class="logo"><img src="pictures/logo's.jpg.jpg" alt="Logo"></div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="search.html">Search</a></li>
@@ -18,14 +18,17 @@
     </nav>
 
     <div class="container">
-        <h1>Favorites</h1>
-        <div id="favoritesOutput"></div>
+        <div class="search-block">
+            <h1>Search Cars</h1>
+            <input type="text" id="searchInput" placeholder="Enter make, model, or year...">
+            <div id="searchResults"></div>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2024 YourCompany. All rights reserved.</p>
     </footer>
 
-    <script src="favorites.js" defer></script>
+    <script src="search.js" defer></script>
 </body>
 </html>

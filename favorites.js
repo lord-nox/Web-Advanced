@@ -1,36 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
     const favoritesOutput = document.getElementById('favoritesOutput');
-    let likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
 
-    function fetchFavoriteCars() {
-        likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
-        if (likedCars.length === 0) {
-            favoritesOutput.innerHTML = '<p>No favorite cars added yet.</p>';
-            return;
-        }
-
-        const apiUrl = 'https://api.api-ninjas.com/v1/cars?id=' + likedCars.join(',');
-
-        fetch(apiUrl, {
-            method: 'GET',
-            headers: {
-                'X-Api-Key': 'Qg+zs2Q/O1tfiWZv3hNeTw==0Q5YlQKMJDWrTjlb'
+    // Functie om favoriete auto's op te halen en weer te geven
+    async function fetchFavoriteCars() {
+        let likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
+        
+        try {
+            if (likedCars.length === 0) {
+                favoritesOutput.innerHTML = '<p>No favorite cars added yet.</p>';
+                return;
             }
-        })
-        .then(response => {
+
+            const apiUrl = 'https://api.api-ninjas.com/v1/cars?id=' + likedCars.join(',');
+            const response = await fetch(apiUrl, {
+                method: 'GET',
+                headers: {
+                    'X-Api-Key': 'Qg+zs2Q/O1tfiWZv3hNeTw==0Q5YlQKMJDWrTjlb'
+                }
+            });
+
             if (!response.ok) {
                 throw new Error('An error occurred while fetching data from the API: ' + response.statusText);
             }
-            return response.json();
-        })
-        .then(data => {
+
+            const data = await response.json();
             displayFavoriteCars(data);
-        })
-        .catch(error => {
+        } catch (error) {
             favoritesOutput.innerHTML = 'An error occurred: ' + error.message;
-        });
+        }
     }
 
+    // Functie om favoriete auto's weer te geven
     function displayFavoriteCars(cars) {
         let carHtml = '';
         cars.forEach(car => {
@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         addLikeButtonListeners();
     }
 
+    // Functie om de 'like' knoppen toe te voegen aan favoriete auto's
     function addLikeButtonListeners() {
         document.querySelectorAll('.like-button').forEach(button => {
             button.addEventListener('click', function() {
@@ -68,19 +69,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Functie om een auto aan favorieten toe te voegen of te verwijderen
     function toggleFavorite(carId) {
-        likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
+        let likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
         if (likedCars.includes(carId)) {
             likedCars = likedCars.filter(id => id !== carId);
         } else {
             likedCars.push(carId);
         }
         localStorage.setItem('likedCars', JSON.stringify(likedCars));
-        fetchFavoriteCars();
+        fetchFavoriteCars(); // Opnieuw laden van favorieten na wijziging
     }
 
+    // Functie om de 'like' knoppen bij te werken op basis van opgeslagen favorieten
     function updateLikedCars() {
-        likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
+        const likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
         document.querySelectorAll('.car').forEach(carDiv => {
             const carId = carDiv.getAttribute('data-id');
             const likeButton = carDiv.querySelector('.like-button');
@@ -94,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Initieel ophalen en weergeven van favoriete auto's
     fetchFavoriteCars();
 });
-
-export { fetchFavoriteCars };

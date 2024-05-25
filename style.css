@@ -183,11 +183,53 @@ footer {
     cursor: pointer;
     font-size: 2.5em;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    left: 500px;
+    top: 40px;
     color: #ccc;
 }
 
 .like-button.liked {
     color: black;
+}
+
+/* Voeg stijlen toe aan de zoekpagina */
+
+.search-block {
+    text-align: center;
+}
+
+.search-block h1 {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchResults {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#searchResults .car {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#searchResults .car h2 {
+    margin: 0;
+}
+
+#searchResults .car p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
 }
