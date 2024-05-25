@@ -12,9 +12,11 @@ Endtask
     <h2 id="installatie">Installatie</h2>
     <p>Clone de repository naar je lokale machine:</p>
     <pre><code>git clone https://github.com/lord-nox/Web-Advanced.git</code></pre>
-    <p>Navigeer naar de gekloonde map:</p>
-    <pre><code>cd auto-zoekmachine</code></pre>
-    <p>Open het index.html-bestand in je favoriete webbrowser.</p>
+    <p>Navigeer naar de gekloonde map in GitHub Desktop:</p>
+    <pre><code>Open in visual studio code.</code></pre>
+    OF <br /><br />
+    ![image](https://github.com/lord-nox/Web-Advanced/assets/163293931/1ec77ad6-3ba2-47be-b059-8dd6e4cc9570) <br />
+    <p> En open het index.html-bestand in je favoriete webbrowser.</p>
     <h2 id="gebruik">Gebruik</h2>
     <p>Op de startpagina (index.html) kunnen gebruikers auto's zoeken door merk, model en jaar in te voeren. Ze kunnen ook favoriete auto's toevoegen door op de "Like" knop te klikken. De "Favorites" pagina (favorites.html) toont alle favoriete auto's die zijn toegevoegd door de gebruiker. Hier kunnen gebruikers favoriete auto's bekijken en verwijderen.</p>
     <h2 id="bijdragen">Bijdragen</h2>
