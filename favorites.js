@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to fetch favorite cars from local storage and display them
     function fetchFavoriteCars() {
         let likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
+        console.log('Liked Cars on Favorites Page:', likedCars); // Debugging log
         
         try {
             if (likedCars.length === 0) {
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             likedCars.push(carId);
         }
         localStorage.setItem('likedCars', JSON.stringify(likedCars));
+        console.log('Liked Cars:', likedCars); // Debugging log
         fetchFavoriteCars(); // Reload favorites after modification
     }
 

@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error('Failed to load car data');
             }
             const cars = await response.json();
+            localStorage.setItem('cars', JSON.stringify(cars)); // Store cars data in localStorage
             displaySearchResults(filterCars(cars, searchText));
         } catch (error) {
             console.error('Error fetching car data:', error);
@@ -77,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             likedCars.push(carId);
         }
         localStorage.setItem('likedCars', JSON.stringify(likedCars));
+        console.log('Liked Cars:', likedCars); // Debugging log
         updateLikedCars();
     }
 
