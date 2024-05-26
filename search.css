@@ -1,0 +1,254 @@
+/* CSS for the navigation bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+/* General styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px;
+    margin: 100px auto 20px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    align-items: center;
+}
+
+.image-left img,
+.image-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.image-left {
+    grid-column: 1 / 2;
+}
+
+.image-right {
+    grid-column: 3 / 4;
+}
+
+.form-container {
+    grid-column: 2 / 3;
+    margin: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: calc(100% - 22px);
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#output {
+    margin-top: 20px;
+}
+
+/* Animations for the cars */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.car {
+    position: relative;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in;
+    width: calc(100% - 32px); /* Adjust the width of the car to fit the container */
+}
+
+.car h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.car p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        grid-template-columns: 1fr;
+        padding: 0; /* Reset padding for the container */
+    }
+
+    .image-left img,
+    .image-right img {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .form-container {
+        margin: 20px 0;
+    }
+
+    .car {
+        padding: 15px 20px; /* Adjust the padding for the cars */
+        margin-bottom: 20px; /* Increase the margin-bottom to separate cars */
+    }
+}
+
+/* CSS for the footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2.5em;
+    position: absolute;
+    left: 400px; /* Adjusted position */
+    top: 30px;
+    color: #ccc;
+}
+
+.like-button.liked {
+    color: black;
+}
+
+/* Add styles for the search page */
+
+.search-block {
+    text-align: center;
+}
+
+.search-block h1 {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchResults {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#searchResults .car {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#searchResults .car h2 {
+    margin: 0;
+}
+
+#searchResults .car p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
