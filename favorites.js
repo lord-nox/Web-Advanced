@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const favoritesOutput = document.getElementById('favoritesOutput');
 
-    // Functie om favoriete auto's op te halen en weer te geven
-    async function fetchFavoriteCars() {
+    // Function to fetch favorite cars from local storage and display them
+    function fetchFavoriteCars() {
         let likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
         
         try {
@@ -11,27 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            const apiUrl = 'https://api.api-ninjas.com/v1/cars?id=' + likedCars.join(',');
-            const response = await fetch(apiUrl, {
-                method: 'GET',
-                headers: {
-                    'X-Api-Key': 'Qg+zs2Q/O1tfiWZv3hNeTw==0Q5YlQKMJDWrTjlb'
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error('An error occurred while fetching data from the API: ' + response.statusText);
-            }
-
-            const data = await response.json();
-            displayFavoriteCars(data);
+            const cars = JSON.parse(localStorage.getItem('cars')) || [];
+            const favoriteCars = cars.filter(car => likedCars.includes(car.id));
+            displayFavoriteCars(favoriteCars);
         } catch (error) {
             favoritesOutput.innerHTML = 'An error occurred: ' + error.message;
         }
     }
 
-    // Functie om favoriete auto's weer te geven
+    // Function to display favorite cars
     function displayFavoriteCars(cars) {
+        if (cars.length === 0) {
+            favoritesOutput.innerHTML = '<p>No favorite cars added yet.</p>';
+            return;
+        }
+
         let carHtml = '';
         cars.forEach(car => {
             const cityMpg = car.city_mpg;
@@ -59,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         addLikeButtonListeners();
     }
 
-    // Functie om de 'like' knoppen toe te voegen aan favoriete auto's
+    // Function to add event listeners to like buttons
     function addLikeButtonListeners() {
         document.querySelectorAll('.like-button').forEach(button => {
             button.addEventListener('click', function() {
@@ -69,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Functie om een auto aan favorieten toe te voegen of te verwijderen
+    // Function to toggle favorite cars
     function toggleFavorite(carId) {
         let likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
         if (likedCars.includes(carId)) {
@@ -78,10 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
             likedCars.push(carId);
         }
         localStorage.setItem('likedCars', JSON.stringify(likedCars));
-        fetchFavoriteCars(); // Opnieuw laden van favorieten na wijziging
+        fetchFavoriteCars(); // Reload favorites after modification
     }
 
-    // Functie om de 'like' knoppen bij te werken op basis van opgeslagen favorieten
+    // Function to update like buttons based on stored favorites
     function updateLikedCars() {
         const likedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
         document.querySelectorAll('.car').forEach(carDiv => {
@@ -97,6 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initieel ophalen en weergeven van favoriete auto's
+    // Initial retrieval and display of favorite cars
     fetchFavoriteCars();
 });
