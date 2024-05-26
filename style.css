@@ -128,6 +128,11 @@ button:disabled {
 #output {
     margin-top: 20px;
 }
+/*Beetje animaties voor de auto's ;)*/
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 .car {
     position: relative;
@@ -136,6 +141,7 @@ button:disabled {
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 10px;
+    animation: fadeIn 1s ease-in;
 }
 
 .car h2 {
