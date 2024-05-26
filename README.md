@@ -62,25 +62,25 @@ Event aan een element koppelen:
 > <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/fc940a0d-2c53-4136-8662-333c24f903ac">
 
 Formulier valideren:
-> Het formulier dat ik ga valideren is zowel de signUp als logIn pagina. Hierbij maak ik gebruik van verschillende vereisten maar met extra nood aan een **geldig email adres**. Het script vind je in **signUp.js**.
+> Het valideren van formuliergegevens om te controleren of ze aan bepaalde criteria voldoen voordat ze worden verzonden naar de server. In mijn geval kijken of
+> er **geldige text** in de textvakken wordt geplaatst. Het script vind je in **script.js**.
 >
-> <img width="353" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/591e4b8d-5a80-462d-8567-18862a351cc7">
+> <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/be71a99c-c6c3-4dc6-92ee-837f5b21301e">
 
 Gebruiken van een constante:
-> Dit wordt overal in mijn project gebruikt.
+> Het definiëren van variabelen met het const-keyword om waarden op te slaan die gedurende de levensduur van het programma niet veranderen. Dit wordt overal in mijn project gebruikt.
 >
-> <img width="379" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/b01719a7-981d-4f34-a772-09963eddb35a">
+> <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/eb5c363d-1f76-46ba-a4cd-7a5186a00ac0">
 
 Gebruiken van template literals:
-> Ik maak vooral gebruik van templte literals bij mijn **admin.js** script, hierbij kan ik makkelijk innerHTML en elementen toevoegen.
+> Het gebruik van backticks (`) om sjabloonreeksen te maken waarin variabelen direct kunnen worden ingevoegd zonder concatenatie. (Ik maak gebruik van template literals bij mijn **script.js**.
 >
-> <img width="563" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/4b43c4f9-318f-42ef-aa76-ee0437c9b6e2">
+> <img width="563" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/5d5a0daa-7675-403d-99b3-9619c331e855">
 
 Destructuring:
-> In de scripts **api.js** en **admin.js** maak ik gebruik van destructuring, bij de api om de gevraagde gegevens uit de api te halen en bij de admin om vanuit het email-adres de voornaam en achternaam te halen.
+> In het script **search.js** maak ik gebruik van Destructuring om parameters te geven aan elke auto uit de lijst  met **cars**.
 >
-> <img width="494" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/a5946e4d-3102-4f8c-9810-0bff5c38f685">
-> <img width="529" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/8225451a-8040-4f5d-8d1e-4c49f6c85e10">
+> <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/0991ac33-85c6-4841-b9d5-ea581d58550c">
 
 Spread & Rest operator:
 > De spread operator gebruik ik bij de **admin.js**. Hier kan ik makkelijk het gevraagd aantal kolommen maken d.m.v. een fucntie en hoef ik deze niet altijd apart aan te maken.
@@ -88,14 +88,16 @@ Spread & Rest operator:
 > <img width="386" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/0450dcfb-2836-4ffe-8e4b-d4acb3403ede">
 
 Iteration over een array:
-> In dezelfde functie als boven staand screenshot, maak ik gebruik van een iteration namelijk de **forEach()** en **For()**. Dit helpt mij bij het aanmaken van de header van mijn tabel naarmate de hoeveelheid kolommen en naam van de tabel.
+> Het doorlopen van arrays met behulp van methoden zoals forEach() om acties uit te voeren op elk element van de array.
+Dit gebruik ik op meerdere plaatsen, onderstaande voorbeelden komen uit **search.js**.
 >
-> <img width="934" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/1371703b-f764-4c39-85c9-6ffed87cd911">
+> <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/06a634df-73e5-4978-b296-076cb08d30dd">
+> <img width="650" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/2f84ad19-5cbd-4e03-845a-f891c6812c00">
 
 Arrow function:
-> Ik gebruik arrow function zo wat door heel mijn project, omdat dit de snelste en beste manier is.
+> Het gebruik van arrow functions (=>) om korte en beknopte functiedefinities te maken, vooral bij het doorlopen van arrays of het toevoegen van event listeners. Arrow functions gebruik ik gedurende het gehele project, omdat dit een snelle manier van werken is!
 >
-> <img width="259" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/7b2eaf4d-bfa9-460f-903d-8f0c45530d85">
+> <img width="500" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/535353dc-2ee5-4b9e-8a6e-30309eb521ee">
 
 Callback function:
 > De callback function wordt benut bij de **api.js**. Omdat we elke keer een nieuwe stad kunnen opgeven en deze willen zien.
