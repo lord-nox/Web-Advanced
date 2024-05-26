@@ -8,19 +8,28 @@ document.addEventListener('DOMContentLoaded', function() {
             searchResults.innerHTML = '';
             return;
         }
-        displaySearchResults(getSampleCarData(searchText));
+        fetchCarData(searchText);
     });
 
-    function getSampleCarData(searchText) {
-        // Sample car data for demonstration purposes
-        const cars = [
-            { id: '1', make: 'Toyota', model: 'Corolla', year: 2020, fuel_type: 'Gasoline', transmission: 'Automatic', city_mpg: 30, highway_mpg: 38 },
-            { id: '2', make: 'Tesla', model: 'Model S', year: 2022, fuel_type: 'Electric', transmission: 'Automatic', city_mpg: 102, highway_mpg: 105 },
-            { id: '3', make: 'Honda', model: 'Civic', year: 2019, fuel_type: 'Gasoline', transmission: 'Manual', city_mpg: 25, highway_mpg: 36 }
-        ];
-        return cars.filter(car => car.make.toLowerCase().includes(searchText.toLowerCase()) || 
-                                  car.model.toLowerCase().includes(searchText.toLowerCase()) || 
-                                  car.year.toString().includes(searchText));
+    async function fetchCarData(searchText) {
+        try {
+            const response = await fetch('cars.json');
+            if (!response.ok) {
+                throw new Error('Failed to load car data');
+            }
+            const cars = await response.json();
+            displaySearchResults(filterCars(cars, searchText));
+        } catch (error) {
+            console.error('Error fetching car data:', error);
+        }
+    }
+
+    function filterCars(cars, searchText) {
+        return cars.filter(car => 
+            car.make.toLowerCase().includes(searchText.toLowerCase()) || 
+            car.model.toLowerCase().includes(searchText.toLowerCase()) || 
+            car.year.toString().includes(searchText)
+        );
     }
 
     function displaySearchResults(cars) {
