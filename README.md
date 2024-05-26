@@ -5,6 +5,7 @@ Endtask
     <h2>Inhoudsopgave</h2>
     <ul>
         <li><a href="#installatie">Installatie</a></li>
+        <li><a href="#requirements">Requirements</a></li>
         <li><a href="#gebruik">Gebruik</a></li>
         <li><a href="#bijdragen">Bijdragen</a></li>
         <li><a href="#licentie">Licentie</a></li>
@@ -19,6 +20,30 @@ Endtask
     <p> En open het index.html-bestand in je favoriete webbrowser.</p>
     <h2 id="gebruik">Gebruik</h2>
     <p>Op de startpagina (index.html) kunnen gebruikers auto's zoeken door merk, model en jaar in te voeren. Ze kunnen ook favoriete auto's toevoegen door op de "Like" knop te klikken. De "Favorites" pagina (favorites.html) toont alle favoriete auto's die zijn toegevoegd door de gebruiker. Hier kunnen gebruikers favoriete auto's bekijken en verwijderen.</p>
+    <h2 id="requirements">Requirements</h2>
+    <p>Hier is een lijst van de vereiste items voor dit project:</p>
+    <ul>
+        <li>Elementen selecteren</li>
+        <li>Elementen manipuleren</li>
+        <li>Event aan een element koppelen</li>
+        <li>Formulier valideren</li>
+        <li>Gebruiken van een constante</li>
+        <li>Gebruiken van template literals</li>
+        <li>Destructuring</li>
+        <li>Spread & Rest operator</li>
+        <li>Iteration over een array</li>
+        <li>Arrow function</li>
+        <li>Callback function</li>
+        <li>Promise</li>
+        <li>Consumer methods</li>
+        <li>Async & Await</li>
+        <li>Self executing function</li>
+        <li>Fetch om data op te halen</li>
+        <li>JSON manipuleren en weergeven</li>
+        <li>Basis CSS Animatie</li>
+        <li>Gebruiken van een flexbox of CSS grid</li>
+        <li>Gebruik van LocalStorage</li>
+    </ul>
     <h2 id="bijdragen">Bijdragen</h2>
     <p>Bijdragen aan dit project zijn welkom! Hier zijn een paar manieren waarop je kunt bijdragen:</p>
     <ul>
