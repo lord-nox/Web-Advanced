@@ -6,6 +6,7 @@ Endtask
     <ul>
         <li><a href="#installatie">Installatie</a></li>
         <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#requirementsInPortfolio">Requirements in portfolio</a></li>
         <li><a href="#gebruik">Gebruik</a></li>
         <li><a href="#bijdragen">Bijdragen</a></li>
         <li><a href="#licentie">Licentie</a></li>
@@ -44,7 +45,12 @@ Endtask
         <li>Gebruiken van een flexbox of CSS grid</li>
         <li>Gebruik van LocalStorage</li>
     </ul>
-    <h2 id="bijdragen">Bijdragen</h2>
+    <h2 id="bijdragen">Requirements in portfolio</h2>
+Elementen selecteren:
+> Het selecteren van HTML-elementen met behulp van hun ID, klasse of tag-naam. Het eerste voorkomen hiervan is in **index.js**.
+> 
+> <img width="352" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/f502a9ab-eabb-4ada-b06b-75fb6d036bf6">
+<h2 id="bijdragen">Bijdragen</h2>
     <p>Bijdragen aan dit project zijn welkom! Hier zijn een paar manieren waarop je kunt bijdragen:</p>
     <ul>
         <li>Bugrapporten: Als je een bug tegenkomt, open dan een issue en beschrijf het probleem zo gedetailleerd mogelijk.</li>
