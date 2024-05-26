@@ -83,9 +83,9 @@ Destructuring:
 > <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/0991ac33-85c6-4841-b9d5-ea581d58550c">
 
 Spread & Rest operator:
-> De spread operator gebruik ik bij de **admin.js**. Hier kan ik makkelijk het gevraagd aantal kolommen maken d.m.v. een fucntie en hoef ik deze niet altijd apart aan te maken.
+> De spread operator gebruik ik bij de **favorites.js**. Het verspreiden van waarden van een array of object over individuele elementen, of het verzamelen van resterende parameters in een array.
 >
-> <img width="386" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/0450dcfb-2836-4ffe-8e4b-d4acb3403ede">
+> <img width="750" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/14488ae5-eed5-4673-8dcb-357a17dd2509">
 
 Iteration over een array:
 > Het doorlopen van arrays met behulp van methoden zoals forEach() om acties uit te voeren op elk element van de array.
@@ -100,49 +100,47 @@ Arrow function:
 > <img width="500" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/535353dc-2ee5-4b9e-8a6e-30309eb521ee">
 
 Callback function:
-> De callback function wordt benut bij de **api.js**. Omdat we elke keer een nieuwe stad kunnen opgeven en deze willen zien.
+> Het doorgeven van een functie als argument aan een andere functie, die wordt uitgevoerd nadat een bepaalde actie is voltooid. Onderstaand voorbeeld komt uit mijn **script.js**.
 >
-> <img width="320" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/b307b254-4137-429d-9290-809932e9d591">
+> <img width="750" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/98ac4173-65e0-441c-b4d4-d2ffb93ed5af">
 
-Promise + Consumer method + Async & await:
-> In de functie **getWeatherData()** maak ik zowel gebruik van een **promise**, die de gevraagde data ophaald.
+Promise + Consumer method
+> Een object dat een asynchrone bewerking vertegenwoordigt en het succes of falen van de bewerking afhandelt. -> **Promise** <br />
+> **Consumer method** -> Methoden die worden gebruikt om gegevens te consumeren of te verwerken, zoals .then() en .catch() bij het werken met Promises. Ook dit voorbeeld komt uit **script.js**.
 > 
-> Ook maak ik gebruik van **consumer methods**, **then()** dit wordt uitgevoerd van zodra de data beschikbaar is.
+> <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/dc4772b6-db55-476b-8313-c84c1f1f330f">
+
+Async & await:
+> Het gebruik van de **async-functie** en het await-keyword om asynchrone code op een synchrone manier te schrijven, de code gaat dus pas verder vanaf de andere voltooid is. Gebruikt in **script.js**.
 > 
-> Ten slotte maak ik ook nog gebruik van **async & await**, de code gaat dus pas verder vanaf de promise voltooid is.
->
-> <img width="575" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/7d30caad-ad05-446c-a6fa-2bb73fb5945f">
+> <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/e0dee647-df4e-43d5-a61e-6a11d61eec75">
 
 Self executing function:
-> Vanaf dat men op de pagina **admin.html** komt wordt het script **localStorageToArray()** ingeladen. Dit maakt van de opgeslagen localStorage data een array met verschillende elementen.
+> Spreekt vrijwel voor zich, dit is een functie die automatisch wordt uitgevoerd zodra deze wordt gedefinieerd.
 > 
-> <img width="400" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/7a522138-4752-45a6-9fc2-562988dc4b18">
-
-> <img width="486" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/962b3ef4-23a6-4942-bed2-b1ccdb673b57">
-
+> <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/4fd46175-3faf-49d7-a838-b3a1f8674f57">
 
 Fetch om data op te halen + JSON manipuleren en weergeven:
-> Ik gebruik de **fetch()** om de data van de api server af te hale en binnen te krijgen op mijn 'database / project'.
-> Na dat we de gegevens hebben gaan we met de method **response.json()** de ontvangen data omzetten naar een javaScript-object.
+> Ik gebruik de **fetch()** (line 47) om de data van de api server af te hale en binnen te krijgen op mijn 'database / project'.
+> Na dat we de gegevens hebben gaan we met de method **response.json()** (line 57) de ontvangen data omzetten naar een javaScript-object.
 >
-> <img width="584" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/0a490263-97c4-4234-8741-3b5b512b7a78">
+> <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/6853a3d7-c019-4167-b44b-b3042fe21fc1">
 
 Basis CSS Animatie:
-> Op 1 plek staat er een zeer basic css animatie, omdat ik dit niet zeer belangrijk vind op een web-pagina. Je kan deze vinden in de file **signUp.css** onder de class **#Login-card + slideIn**.
+> Het toepassen van eenvoudige animaties op elementen met behulp van CSS, zoals het geleidelijk laten verschijnen of verdwijnen van elementen. Ik ga te werk met een **fade-in** van 1seconde als de auto's worden ingeladen. 
 >
-> <img width="241" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/411152bf-c683-42ca-bdec-67cc69a6ab13">
+> <img width="750" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/b067910d-4e0a-47c4-b33e-0decb7f678a9">
 
 Gebruiken van een flexbox of CSS grid:
-> Ik maar door heen het project gebruik van de flexbox, een voorbeeld hiervan vind je in de **footer** in de file **index.css**.
+> Ik maar door heen het project gebruik van de flexbox, het gebruik van Flexbox of CSS Grid voor het creëren van responsieve en geavanceerde lay-outs. Ik heb voor de **nav-bar** (navigation) al meteen hiermee aan de slag gegaan in mijn **style.css**. Hieronder zal u een voorbeeld terugvinden. 
 >
-> <img width="295" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/4237008f-108a-4a12-8b8c-a450bf975b36">
+> <img width="700" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/d2a079c7-e866-4d85-80e2-4ef44070d01f">
 
 Gebruik van LocalStorage:
-> Als laatste requirement maak ik gebruik van localStorage om mijn inlog gegevens te bewaren en een email aan een wachtwoord te linken. Dit vind je in de file **signUp.js**.
+> Het gebruik van de LocalStorage API om gegevens lokaal op te slaan en op te halen, zoals in mijn geval de opgeslagen auto's + model en nog enkele andere veelzeggende eigenschappen.
 >
-> <img width="376" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/4499cecf-a055-40c1-bbd4-0c965da1a12f">
+> <img width="800" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/27187a97-f812-4d2a-806c-8ddce45f98ed">
 
-> <img width="409" alt="image" src="https://github.com/XanderWTRS/Web-Advanced-Portfolio/assets/137180731/e6fa2bc7-7f9d-474c-9802-54f03f6821b4">
 <h2 id="bijdragen">Bijdragen</h2>
     <p>Bijdragen aan dit project zijn welkom! Hier zijn een paar manieren waarop je kunt bijdragen:</p>
     <ul>
