@@ -97,7 +97,7 @@ Dit gebruik ik op meerdere plaatsen, onderstaande voorbeelden komen uit **search
 Arrow function:
 > Het gebruik van arrow functions (=>) om korte en beknopte functiedefinities te maken, vooral bij het doorlopen van arrays of het toevoegen van event listeners. Arrow functions gebruik ik gedurende het gehele project, omdat dit een snelle manier van werken is!
 >
-> <img width="500" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/535353dc-2ee5-4b9e-8a6e-30309eb521ee">
+> <img width="800" alt="image" src="https://github.com/lord-nox/Web-Advanced/assets/163293931/73c83e45-31f9-4242-b28f-88efc6389c3f">
 
 Callback function:
 > Het doorgeven van een functie als argument aan een andere functie, die wordt uitgevoerd nadat een bepaalde actie is voltooid. Onderstaand voorbeeld komt uit mijn **script.js**.
