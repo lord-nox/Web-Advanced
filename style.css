@@ -62,6 +62,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     align-items: center;
+    height: 400px; /* Set a fixed height */
 }
 
 .image-left img,
@@ -71,6 +72,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 .image-left {
     grid-column: 1 / 2;
 }
@@ -81,6 +83,11 @@ body {
 
 .form-container {
     grid-column: 2 / 3;
+    min-height: 150px; /* Set a fixed height */
+    overflow: hidden; /* Hide overflow content */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center items vertically */
 }
 
 .form-container {
@@ -90,10 +97,22 @@ body {
 h1 {
     text-align: center;
     color: #fff;
+    white-space: nowrap; /* Prevent line breaks */
+    margin: 0; /* Remove margin */
+}
+
+.typingText {
+    letter-spacing: 3px;
+    font-size: 180%;
+    /* font-family: "Ubuntu Mono", monospace; */
+    text-align: center;
+    padding: 0.5em;
+    color: #ffffff;
+    line-height: 1; /* Ensure consistent line height */
+    margin: 0; /* Remove margin */
 }
 
 h2 {
-
     color: #fff;
 }
 
@@ -104,6 +123,7 @@ form {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allow the form to grow to fill the container */
 }
 
 input[type="text"] {
@@ -190,6 +210,7 @@ footer {
     border-radius: 0px;
     z-index: 1000;
 }
+
 .like-button {
     background: none;
     border: none;

@@ -3,7 +3,42 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitButton = document.getElementById('submitButton');
     const outputDiv = document.getElementById('output');
     const defaultLimit = 50;
-
+    
+    const title = document.querySelector('.typingText');
+    let arrayOfItems = ["Car parameters", "Audi", "BMW", "Mercedes"]; // Example items
+    
+    if(arrayOfItems) {
+        let currentNameIndex = 0;
+        const typingSpeed = 100; // Milliseconds per character
+        const pauseTime = 1000; // Milliseconds to pause at the end of each name
+    
+        function typeName(name, index) {
+            if (index < name.length) {
+                title.textContent += name.charAt(index);
+                setTimeout(() => typeName(name, index + 1), typingSpeed);
+            } else {
+                setTimeout(() => deleteName(name), pauseTime);
+            }
+    
+            if (currentNameIndex % 2 === 0) {
+                title.style.color = '#ffffff';   
+            } else {
+                title.style.color = 'white';  
+            }
+        }
+    
+        function deleteName(name) {
+            if (name.length > 0) {
+                title.textContent = name.slice(0, -1);
+                setTimeout(() => deleteName(name.slice(0, -1)), typingSpeed);
+            } else {
+                currentNameIndex = (currentNameIndex + 1) % arrayOfItems.length;
+                setTimeout(() => typeName(arrayOfItems[currentNameIndex], 0), typingSpeed);
+            }
+        }
+    
+        typeName(arrayOfItems[currentNameIndex], 0);
+    }
     form.addEventListener('input', function() {
         const inputs = form.querySelectorAll('input[type="text"]'); // Get all text input fields in the form
         let isAnyFieldFilled = false; // Initialize a variable to check if any field is filled
